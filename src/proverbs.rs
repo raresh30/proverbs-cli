@@ -253,7 +253,7 @@ const PROVERBS: [&str; 313] = [
     "Peștele mare mănâncă peștele mic (sau Peștele cel mare mănâncă pe cel mic)",
     "Pică pară mălăiață în gura lui Nătăfleață",
     "Prea puțin ca să trăiești, prea mult ca să mori",
-    "Prieteni noi să îți faci, dar de cei bătrâni să nu te lași![6]",
+    "Prieteni noi să îți faci, dar de cei bătrâni să nu te lași!",
     "Printre grâu, mălura crește.",
     "Prost să fii, noroc să ai.",
     "Puneți frâu la gură și lacăt la inimă",
