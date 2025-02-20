@@ -1,6 +1,6 @@
 [package]
 name = "proverbs-cli"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Rares Hanganu rares.hanganur@gmail.com"]
 license = "MIT"
 description = "A CLI tool for romanian proverbs"
