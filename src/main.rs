@@ -1,4 +1,5 @@
-use clap::{Parser, Subcommand, Args};
+use clap::{Parser, Subcommand};
+use crate::commands::{SearchArgs, QuizArgs};
 
 mod proverbs;
 mod commands;
@@ -14,11 +15,8 @@ struct Cli {
 enum Command {
     Search(SearchArgs),
     List,
-}
-
-#[derive(Args)]
-struct SearchArgs {
-    pattern: String,
+    Random,
+    Quiz(QuizArgs),
 }
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
@@ -26,8 +24,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let cli = Cli::parse();
     match cli.command {
-        Command::Search(args) => commands::search(&proverbs, args.pattern),
-        Command::List => commands::list(&proverbs),
+        Command::Search(args) => commands::search(&proverbs, args)?,
+        Command::List => commands::list(&proverbs)?,
+        Command::Random => commands::random(&proverbs)?,
+        Command::Quiz(args) => commands::quiz(&proverbs, args)?,
     }
 
     Ok(())
