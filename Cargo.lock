@@ -168,7 +168,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "proverbs"
+name = "proverbs-cli"
 version = "0.1.0"
 dependencies = [
  "clap",
