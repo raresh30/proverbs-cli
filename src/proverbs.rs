@@ -220,7 +220,7 @@ const PROVERBS: [&str; 313] = [
     "Nu lăuda ziua înainte de asfințit.",
     "Nu poți fi și cu varza unsă și cu slănina în pod.",
     "Nu se sperie curva bătrână de vorba groasă.",
-    "Nu știe stânga ce face dreapta. (Matei 6:3)",
+    "Nu știe stânga ce face dreapta.",
     "Nu te încrede în cânele care dă din coadă.",
     "Nu toate muștele fac miere.",
     "Nu tot ce zboară se mănâncă.",

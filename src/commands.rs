@@ -17,10 +17,6 @@ fn canonical_form(proverb: &str) -> String {
     re.replace_all(unidecode::unidecode(proverb).to_lowercase().as_str(), "").to_string()
 }
 
-fn random_proverb(proverbs: &Vec<String>) -> String {
-    proverbs.choose(&mut rand::rng()).unwrap().clone()
-}
-
 pub fn search(proverbs: &Vec<String>, args: SearchArgs) -> Result<(), Box<dyn std::error::Error>> {
     let pattern = args.pattern;
     let results = proverbs.iter()
@@ -39,7 +35,7 @@ pub fn list(proverbs: &Vec<String>) -> Result<(), Box<dyn std::error::Error>> {
 }
 
 pub fn random(proverbs: &Vec<String>) -> Result<(), Box<dyn std::error::Error>> {
-    println!("{}", random_proverb(proverbs));
+    println!("{}", proverbs.choose(&mut rand::rng())?);
     Ok(())
 }
 
@@ -57,7 +53,7 @@ pub fn quiz(proverbs: &Vec<String>, args: QuizArgs) -> Result<(), Box<dyn std::e
     let num_questions = args.num_questions;
     for i in 0..num_questions {
         println!("Question {}", i + 1);
-        let proverb = random_proverb(proverbs);
+        let proverb = proverbs.choose(&mut rand::rng())?;
         let hint = create_hint(proverb.as_str());
         println!("Guess the proverb: {}", hint);
         let mut guess = String::new();
