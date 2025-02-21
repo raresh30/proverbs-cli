@@ -35,7 +35,7 @@ pub fn list(proverbs: &Vec<String>) -> Result<(), Box<dyn std::error::Error>> {
 }
 
 pub fn random(proverbs: &Vec<String>) -> Result<(), Box<dyn std::error::Error>> {
-    println!("{}", proverbs.choose(&mut rand::rng())?);
+    println!("{}", proverbs.choose(&mut rand::rng()).unwrap());
     Ok(())
 }
 
@@ -53,7 +53,7 @@ pub fn quiz(proverbs: &Vec<String>, args: QuizArgs) -> Result<(), Box<dyn std::e
     let num_questions = args.num_questions;
     for i in 0..num_questions {
         println!("Question {}", i + 1);
-        let proverb = proverbs.choose(&mut rand::rng())?;
+        let proverb = proverbs.choose(&mut rand::rng()).unwrap();
         let hint = create_hint(proverb.as_str());
         println!("Guess the proverb: {}", hint);
         let mut guess = String::new();
